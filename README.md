@@ -4,6 +4,7 @@
 Run:
 ```bash
 git clone https://github.com/mne/dotfiles
+dotfiles/install-zsh.sh
 dotfiles/init.sh
 tmux
 ```
