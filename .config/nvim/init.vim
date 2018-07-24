@@ -1,3 +1,6 @@
+" let g:python3_host_prog = '/path/to/python3'
+" let g:loaded_python3_provider = 1
+
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
@@ -52,9 +55,16 @@ Plug 'plasticboy/vim-markdown'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'heavenshell/vim-syntax-flowtype'
-" Plug 'chemzqm/vim-jsx-improve'
 Plug 'prettier/vim-prettier'
 Plug 'flowtype/vim-flow'
+
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript'
+" For async completion
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" For Denite features
+Plug 'Shougo/denite.nvim'
+
 
 " TODO Check this plugs
 " https://github.com/svermeulen/vim-easyclip
@@ -62,6 +72,11 @@ Plug 'flowtype/vim-flow'
 
 " Initialize plugin system
 call plug#end()
+
+
+" deoplete settings
+" ============================================================================
+let g:deoplete#enable_at_startup = 1
 
 
 " Color & UI settings
@@ -188,7 +203,7 @@ let g:XkbSwitchEnabled = 1
 
 " Gruvbox settings
 "=============================================================================
-let g:gruvbox_contrast_light='hard' " soft | medium | hard
+let g:gruvbox_contrast_light='soft' " soft | medium | hard
 let g:gruvbox_contrast_dark='soft' " soft | medium | hard
 let g:gruvbox_bold=1
 let g:gruvbox_italic=1
@@ -225,7 +240,7 @@ let g:UltiSnipsJumpBackwardTrigger='<A-b>'
 
 " NERDTree settings
 "=============================================================================
-let g:NERDTreeQuitOnOpen=1
+let g:NERDTreeQuitOnOpen=0
 let g:NERDTreeWinPos="left"
 let g:NERDTreeWinSize=40
 noremap <silent> <leader>ff :NERDTreeFind<CR>
