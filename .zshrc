@@ -152,7 +152,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git npm node ubuntu vi-mode)
+plugins=(git npm node ubuntu vi-mode ng yarn)
 
 # User configuration
 
@@ -196,6 +196,8 @@ export MANPATH="/usr/local/man:$MANPATH"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias tmux="env TERM=xterm-256color tmux"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
