@@ -55,7 +55,12 @@ Plug 'plasticboy/vim-markdown'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'heavenshell/vim-syntax-flowtype'
-Plug 'prettier/vim-prettier'
+" Plug 'prettier/vim-prettier'
+" Plug 'prettier/vim-prettier', {
+    " \ 'do': 'npm install',
+    " \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
+Plug 'w0rp/ale'
+
 Plug 'flowtype/vim-flow'
 
 Plug 'HerringtonDarkholme/yats.vim'
@@ -201,6 +206,22 @@ imap <A-n> <C-x><C-o>
 let g:XkbSwitchEnabled = 1
 
 
+" ALE settings
+"=============================================================================
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {}
+let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_javascript_prettier_use_local_config = 1
+let g:ale_fixers['typescript'] = ['prettier']
+let g:ale_typescript_prettier_use_local_config = 1
+let g:ale_fixers['css'] = ['prettier']
+let g:ale_css_prettier_use_local_config = 1
+let g:ale_fixers['scss'] = ['prettier']
+let g:ale_scss_prettier_use_local_config = 1
+let g:ale_fixers['json'] = ['prettier']
+let g:ale_json_prettier_use_local_config = 1
+
+
 " Gruvbox settings
 "=============================================================================
 let g:gruvbox_contrast_light='soft' " soft | medium | hard
@@ -301,6 +322,5 @@ let g:flow#errjmp=1
 " Autocommands
 " ============================================================================
 autocmd BufWrite * silent! %s/\s\+$//
-
 
 " vim: set ft=vim :
