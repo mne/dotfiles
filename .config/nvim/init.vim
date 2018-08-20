@@ -70,6 +70,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " For Denite features
 Plug 'Shougo/denite.nvim'
 
+Plug 'chrisbra/Colorizer'
 
 " TODO Check this plugs
 " https://github.com/svermeulen/vim-easyclip
@@ -93,6 +94,7 @@ set colorcolumn=78
 set winwidth=80
 set list
 set listchars=eol:¶,tab:┃\ ,trail:°,conceal:§,extends:→,precedes:←,nbsp:↔
+set conceallevel=0
 
 " Formatter settings
 "=============================================================================
@@ -142,8 +144,8 @@ set writeany
 set history=10000
 set undodir=/tmp/nvim/undodir/
 set undofile
-set undolevels=1000
-set undoreload=1000
+set undolevels=10000
+set undoreload=10000
 
 
 " Foldlevel settings
@@ -261,7 +263,7 @@ let g:UltiSnipsJumpBackwardTrigger='<A-b>'
 
 " NERDTree settings
 "=============================================================================
-let g:NERDTreeQuitOnOpen=0
+let g:NERDTreeQuitOnOpen=1
 let g:NERDTreeWinPos="left"
 let g:NERDTreeWinSize=40
 noremap <silent> <leader>ff :NERDTreeFind<CR>
@@ -284,12 +286,15 @@ let g:NERDCustomDelimiters = {
 
 " Markdown settings
 "=============================================================================
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_conceal = 0
 let g:markdown_fenced_languages = [
 \	'html',
 \	'python',
 \	'bash=sh',
 \	'javascript',
-\	'json'
+\	'json',
+\	'typescript'
 \]
 
 
@@ -317,6 +322,12 @@ let g:flow#autoclose=1
 let g:flow#enable=1
 let g:flow#omnifunc=1
 let g:flow#errjmp=1
+
+
+" Colorizer
+" ============================================================================
+let g:colorizer_auto_color = 1
+let g:colorizer_auto_filetype='css,scss,html,vim'
 
 
 " Autocommands
